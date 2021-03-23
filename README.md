@@ -11,7 +11,8 @@ Observer.py is a test of the Observer pattern from [the pyscard user guide]
 
 scTest.py is sort of an iteration from before virtual keyboard funtionality was added.
 
-#Tech
+Tech
+----
 [pyscard]- python for smart cards
 
 [pynput] - for virtual keyboard stuff
