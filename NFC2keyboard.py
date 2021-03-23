@@ -50,12 +50,21 @@ while True:
 
     cardservice.connection.connect()
     resp = cardservice.connection.transmit([0xFF, 0xB0, 0x00, int(0), 0x04])
-    print()
-    print(stringParser(resp))
+    respStr = stringParser(resp)
+    if respStr is not None and len(respStr) == 8:
 
-    keyboard.type(stringParser(resp))
-    keyboard.press(Key.enter)
-    keyboard.release(Key.enter)
+        print(respStr)
+
+        for char in respStr:
+            #print(char)
+            keyboard.press(char)
+            time.sleep(0.05)
+
+            keyboard.release(char)
+            time.sleep(0.05)
+
+        keyboard.press(Key.enter)
+        keyboard.release(Key.enter)
 
     print("Waiting for card removal",end="")
 
